@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vintage-radio"
+version = "1.0.0"
+description = "A retro-style internet radio player for the terminal"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    { name = "Phil Jung" }
+]
+keywords = ["radio", "terminal", "tui", "music", "streaming"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Players",
+]
+dependencies = [
+    "textual>=0.40.0",
+    "python-mpv>=1.0.0",
+]
+
+[project.scripts]
+radio = "terminal_radio.radio:main"
+
+[project.urls]
+Homepage = "https://github.com/philjung/terminal-radio"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/terminal_radio"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/terminal_radio/**/*.py",
+    "src/terminal_radio/**/*.m3u",
+]
