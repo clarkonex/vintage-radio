@@ -55,7 +55,8 @@ brew install mpv ffmpeg
 
 On Linux:
 ```bash
-sudo apt install mpv ffmpeg  # Debian/Ubuntu
+sudo apt install ffmpeg  # Debian/Ubuntu
+sudo apt install python3-mpv
 ```
 
 ## Usage
